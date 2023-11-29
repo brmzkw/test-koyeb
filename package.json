@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint"
   },
-  "packageManager": "pnpm",
+  "packageManager": "pnpm@latest",
   "dependencies": {
     "@radix-ui/themes": "^2.0.1",
     "@xata.io/client": "^0.27.0",
