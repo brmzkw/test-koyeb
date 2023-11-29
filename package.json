@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint"
   },
-  "heroku-run-build-script": true,
+  "packageManager": "pnpm",
   "dependencies": {
     "@radix-ui/themes": "^2.0.1",
     "@xata.io/client": "^0.27.0",
