@@ -1,0 +1,5 @@
+FROM nginx
+
+ARG KOYEB_GIT_REPOSITORY
+
+RUN echo $KOYEB_GIT_REPOSITORY > /root/storeme
