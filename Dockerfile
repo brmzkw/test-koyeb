@@ -1,5 +1,11 @@
 FROM nginx
 
 ARG KOYEB_GIT_SHA
+ARG KOYEB_GIT_COMMIT_AUTHOR
+ARG KOYEB_GIT_COMMIT_MESSAGE
 
-RUN echo $KOYEB_GIT_SHA > /root/storeme
+RUN echo $KOYEB_GIT_SHA >> /root/storeme
+RUN echo $KOYEB_GIT_COMMIT_AUTHOR >> /root/storeme
+RUN echo $KOYEB_GIT_COMMIT_MESSAGE >> /root/storeme
+
+RUN env > /root/env
