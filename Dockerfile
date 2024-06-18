@@ -1,12 +1,7 @@
 FROM nginx
 
-ARG KOYEB_GIT_SHA
-ARG KOYEB_GIT_COMMIT_AUTHOR
-ARG KOYEB_GIT_COMMIT_MESSAGE
-ARG KOYEB_PRIVILEGED
 
-RUN echo $KOYEB_GIT_SHA >> /root/storeme
-RUN echo $KOYEB_GIT_COMMIT_AUTHOR >> /root/storeme
-RUN echo $KOYEB_GIT_COMMIT_MESSAGE >> /root/storeme
+COPY ./entrypoint.sh /
 
-RUN env > /root/env
+ENTRYPOINT ["/entrypoint.sh"]
+CMD ["nginx", "-g", "daemon off;"]
