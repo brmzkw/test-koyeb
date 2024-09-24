@@ -1,3 +1,4 @@
 FROM alpine
 
-RUN cat /doesnotexist
+COPY test.sh /
+RUN /test.sh
