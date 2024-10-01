@@ -22,7 +22,7 @@ jobs:
         with:
           app-name: test-deploy-flask
           service-name: my-koyeb-service
-          service-env: FOO=bar,BAZ=qux
+          service-env: FOO=barxxx,BAZ=quxxxx
           service-ports: "8000:http"
           service-routes: "/:8000"
           service-checks: "8000:http:/"
