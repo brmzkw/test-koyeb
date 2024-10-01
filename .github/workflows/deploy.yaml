@@ -25,4 +25,4 @@ jobs:
           service-env: FOO=bar,BAZ=qux
           service-ports: "8000:http"
           service-routes: "/:8000"
-          service-checks: "8000:http"
+          service-checks: "8000:http:/"
