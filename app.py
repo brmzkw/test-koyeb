@@ -6,7 +6,8 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def hello_world():
     ret = {
-        'args': dict(request.args)
+        'args': dict(request.args),
+        'headers': dict(request.headers),
     }
 
     try:
