@@ -1,9 +1,23 @@
-from flask import Flask
+import json
+from flask import Flask, request
+
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def hello_world():
-    return 'Hello from Koyeb, xxx'
+    ret = {
+        'args': dict(request.args)
+    }
+
+    try:
+        ret['data_json'] = request.json
+    except:
+        ret['data'] = request.data.decode('utf-8')
+
+    formatted = json.dumps(ret, indent=2)
+    print(formatted)
+
+    return formatted
 
 
 if __name__ == "__main__":
