@@ -3,9 +3,11 @@ from flask import Flask, request
 
 app = Flask(__name__)
 
-@app.route('/', methods=['GET', 'POST'])
-def hello_world():
+@app.route('/', methods=['OPTION', 'GET', 'POST'])
+@app.route('/<path>', methods=['OPTION', 'GET', 'POST'])
+def hello_world(path='/'):
     ret = {
+        'path': path,
         'args': dict(request.args),
         'headers': dict(request.headers),
     }
